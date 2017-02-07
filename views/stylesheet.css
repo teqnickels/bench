@@ -1,7 +1,6 @@
-.calculator-container {
+.calculator {
   width: 232px;
   height: 323px;
-  border-radius: 15px;
   position: absolute;
   top:0;
   bottom: 0;
@@ -10,7 +9,7 @@
   margin: auto;
 }
 
-#display {
+.display {
   width: 232px;
   height: 75px;
   background-color: #8C8C8C;
@@ -21,15 +20,15 @@
   width: 232px;
 }
 
-.orange-button {
+.calculator-orange-button {
   background-color: #f88512;
 }
 
-.orange-button:hover {
+.calculator-orange-button:hover {
 background-color: #ED7E10;
 }
 
-.orange-button:active {
+.calculator-orange-button:active {
   background-color: #ED7E10;
 }
 
