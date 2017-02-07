@@ -47,7 +47,7 @@ button {
 }
 
 .calculator-grey-button {
-  border:.5px solid #8C8C8C;
+  border: 1px solid #8C8C8C;
 }
 
 button:hover {
