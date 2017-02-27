@@ -9,85 +9,83 @@
   </head>
   <body>
 
-    <div class="calculator">
-      <div class="display">
-        <p id="numbers">0</p>
-    </div>
+    <div class="page-container">
+      <div class="calculator-body">
+      <div class="display"><p id="numbers">0</p></div>
+        <div id="calculator-numbers">
+          <div class="calclulator-row1">
+            <div class="calculator-button">
+              <button class="calculator-ac">AC</button>
+            </div>
+            <div class="calculator-button">
+              <button class="calculator-positive-negative">+/-</button>
+            </div>
+            <div class="calculator-button">
+              <button class="percent">%</button>
+            </div>
+            <div class="calculator-button">
+              <button class="calculator-orange-button white-operator divide">÷</button>
+            </div>
+          </div>
 
-  <div id="calculator-numbers">
+          <div class="calculator-row2">
+            <div class="calculator-button">
+              <button id="button7" onclick='eventLogger'>7</button>
+            </div>
+            <div class="calculator-button">
+              <button id="button8" onclick='eventLogger'>8</button>
+            </div>
+            <div class="calculator-button">
+              <button id="button9" onclick='eventLogger'>9</button>
+            </div>
+            <div class="calculator-button">
+              <button class="calculator-orange-button white-operator multiply">x</button>
+            </div>
+          </div>
 
-      <div class="calclulator-row1">
-        <div class="calculator-button">
-          <button class="calculator-ac">AC</button>
-        </div>
-        <div class="calculator-button">
-          <button class="calculator-positive-negative">+/-</button>
-        </div>
-        <div class="calculator-button">
-          <button class="percent">%</button>
-        </div>
-        <div class="calculator-button">
-          <button class="calculator-orange-button white-operator divide">/</button>
-        </div>
-      </div>
+          <div class="calculator-row3">
+            <div class="calculator-button">
+              <button id="button4" onclick='eventLogger'>4</button>
+            </div>
+            <div class="calculator-button">
+              <button id="button5" onclick='eventLogger'>5</button>
+            </div>
+            <div class="calculator-button">
+              <button id="button6" onclick='eventLogger'>6</button>
+            </div>
+            <div class="calculator-button">
+              <button class="calculator-orange-button white-operator subtract">-</button>
+            </div>
+          </div>
 
-      <div class="calculator-row2">
-        <div class="calculator-button">
-          <button id="button7" onclick='eventLogger'>7</button>
-        </div>
-        <div class="calculator-button">
-          <button id="button8" onclick='eventLogger'>8</button>
-        </div>
-        <div class="calculator-button">
-          <button id="button9" onclick='eventLogger'>9</button>
-        </div>
-        <div class="calculator-button">
-          <button class="calculator-orange-button white-operator multiply">x</button>
-        </div>
-      </div>
+          <div class="calculator-row">
+            <div class="calculator-button">
+              <button id="button1" onclick='eventLogger'>1</button>
+            </div>
+            <div class="calculator-button">
+              <button id="button2" onclick='eventLogger'>2</button>
+            </div>
+            <div class="calculator-button">
+              <button id="button3" onclick='eventLogger'>3</button>
+            </div>
+            <div class="calculator-button">
+              <button class="calculator-orange-button white-operator">+</button>
+            </div>
+          </div>
 
-      <div class="calculator-row3">
-        <div class="calculator-button">
-          <button id="button4" onclick='eventLogger'>4</button>
-        </div>
-        <div class="calculator-button">
-          <button id="button5" onclick='eventLogger'>5</button>
-        </div>
-        <div class="calculator-button">
-          <button id="button6" onclick='eventLogger'>6</button>
-        </div>
-        <div class="calculator-button">
-          <button class="calculator-orange-button white-operator subtract">-</button>
-        </div>
-      </div>
-
-      <div class="calculator-row">
-        <div class="calculator-button">
-          <button id="button1" onclick='eventLogger'>1</button>
-        </div>
-        <div class="calculator-button">
-          <button id="button2" onclick='eventLogger'>2</button>
-        </div>
-        <div class="calculator-button">
-          <button id="button3" onclick='eventLogger'>3</button>
-        </div>
-        <div class="calculator-button">
-          <button class="calculator-orange-button white-operator">+</button>
-        </div>
-      </div>
-
-      <div class="calculator-row">
-        <div class="calculator-button">
-          <button id="button0" class="large-button zero">0</button>
-        </div>
-        <div class="calculator-button">
-          <button class="decimal">.</button>
-        </div>
-        <div class="calculator-button">
-          <button class="calculator-orange-button white-operator equal">=</button>
-        </div>
-      </div>
-
-    </div>
+          <div class="calculator-row">
+            <div class="calculator-button">
+              <button id="button0" class="large-button zero">0</button>
+            </div>
+            <div class="calculator-button">
+              <button class="decimal">.</button>
+            </div>
+            <div class="calculator-button">
+              <button class="calculator-orange-button white-operator equal">=</button>
+            </div>
+          </div>
+        </div> <!--closes calculator-numbers-->
+      </div> <!--closes calculator-body-->
+    </div> <!--closes aligner-->
   </body>
 </html>
