@@ -3,53 +3,70 @@ document.addEventListener('DOMContentLoaded',function(event) {
   calculatorNumbers.addEventListener('click', eventLogger)
 })
 
-// function sum() is a callback that is waiting for the return of rightSideOfOperation()
-// rightSideOfOperation() starts when + or * is == value
 
-function displayIt(value) {
-  var currentValue = document.getElementsByTagName('P')[0].innerText
-    if(currentValue[0] == 0) {
-      document.getElementsByTagName('P')[0].textContent = value
+var operand = {
+  plus: function(left, right) {
+    return left + right
+  },
+
+  minus: function(left, right) {
+    return left-right
+  },
+
+  divide: function(left, right) {
+  return left/right
+  },
+
+  multiply: function(left, right) {
+    return left * right
+  },
+
+  percent: function(left, right) {
+    return left/100 * right
+  }
+}
+
+var currentValue = {
+  left: '',
+  right: ''
+}
+
+var side = { side: 'left' }
+
+function eventLogger(event) {
+  var display = document.getElementsByTagName('P')[0]
+  var previousValue = {
+    left: '',
+    right: ''
+  }
+  currentValue[side.side] = event.target.textContent;
+
+  var numbers = ['1','2','3','4','5','6','7','8','9','0','.']
+
+  if( numbers.indexOf(currentValue[side.side]) !== -1  ) {
+    previousValue[side.side] = display.innerText
+    currentValue[side.side] = previousValue[side.side] + currentValue[side.side]
+    console.log('TOTAL', side.side,  currentValue[side.side])
+    if(display.textContent == '0') {
+      display.textContent = currentValue[side.side]
     }else{
-      document.getElementsByTagName('P')[0].textContent = currentValue + value
+      display.textContent = currentValue[side.side]
     }
-    if(value =='+') {
-      var operation = '+'
-      holdOperator(value, currentValue, operation)
-    }
-    setToZero(value,currentValue)
-    return currentValue
-}
-
-function holdOperator(value, currentValue, operation) {
-
-  console.log('VALUE', value)
-  console.log('currentValue', currentValue)
-  document.getElementsByTagName('P')[0].innerText = operation
-  if(currentValue[0] == '+') {
-    document.getElementsByTagName('P')[0].innerText = currentValue.substr(1)
-    
-  }
-
-
-  return operation
-}
-
-
-function rightSideOfOperation(currentValue, value, operation) {
-
-}
-
-
-function setToZero(value, currentValue) {
-  if(value == 'AC') {
-    document.getElementsByTagName('P')[0].innerText = '0'
-    return currentValue
+  }else{
+    //operandHandler(side)
+    side.side = 'right'
+    console.log(currentValue[side.side]);
+    return currentValue[side.side]
   }
 }
 
-function eventLogger (event) {
-  var value = event.target.textContent;
-  displayIt(value)
-  return value
+
+
+
+
+
+function setToZero(currentValueLeft, previousValueLeft) {
+  if(currentValueLeft == 'AC') {
+    return document.getElementsByTagName('P')[0].innerText = '0'
+  }
 }
