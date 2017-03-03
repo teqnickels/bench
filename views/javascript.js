@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded',function(event) {
   var calculatorNumbers = document.getElementById('calculator-numbers')
-  calculatorNumbers.addEventListener('click', eventLogger)
+  calculatorNumbers.addEventListener('click', sortInputs)
 })
 
 
@@ -33,8 +33,9 @@ var currentValue = {
 
 var side = { side: 'left' }
 
-function eventLogger(event) {
+function sortInputs(event) {
   var display = document.getElementsByTagName('P')[0]
+
   var previousValue = {
     left: '',
     right: ''
@@ -44,29 +45,28 @@ function eventLogger(event) {
   var numbers = ['1','2','3','4','5','6','7','8','9','0','.']
 
   if( numbers.indexOf(currentValue[side.side]) !== -1  ) {
-    previousValue[side.side] = display.innerText
-    currentValue[side.side] = previousValue[side.side] + currentValue[side.side]
+    if(display.innerText !== '0') {
+       previousValue[side.side] = display.innerText
+       currentValue[side.side] = previousValue[side.side] + currentValue[side.side]
+     }else{
+       currentValue[side.side] = previousValue[side.side] + currentValue[side.side]
+     }
     console.log('TOTAL', side.side,  currentValue[side.side])
-    if(display.textContent == '0') {
-      display.textContent = currentValue[side.side]
+    if(display.innerText == '0') {
+      display.innerText = currentValue[side.side]
     }else{
       display.textContent = currentValue[side.side]
     }
   }else{
-    //operandHandler(side)
+    //right-side
+    var operators = ['=', '+', '*', '÷', '%']
     side.side = 'right'
+    display.innerText = previousValue[side.side]
     console.log(currentValue[side.side]);
+    if(currentValue[side.side] == 'AC') {
+      display.innerText = '0'
+      console.log('DISPLAY',display.innerText);
+    }
     return currentValue[side.side]
-  }
-}
-
-
-
-
-
-
-function setToZero(currentValueLeft, previousValueLeft) {
-  if(currentValueLeft == 'AC') {
-    return document.getElementsByTagName('P')[0].innerText = '0'
-  }
+    }
 }
